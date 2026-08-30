@@ -4,14 +4,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // Public customer header — keep tiny. Secrets/endpoints live sealed inside libAPIClient.a.
-#define TSERVER_SDK_RELEASE_VERSION @"2.0.8"
+#define TSERVER_SDK_RELEASE_VERSION @"2.0.9"
 #define APICLIENT_HAS_TERMINAL_EVENTS 1
 
-// Điền package token đúng MỘT LẦN tại đây. UI pack được chọn trên web và
-// chỉ hiển thị sau khi signed server config trả về; customer source không cần cấu hình thêm.
-static NSString * const kAPIClientPackageToken = @"pkg_s6sDnBXWDkQsVMoW1INdgJ3uZAjPCyYu";
+// Configured at runtime by ProtectedConfiguration.swift. Keep plaintext empty.
+static NSString * const kAPIClientPackageToken = @"";
 
 FOUNDATION_EXTERN void APIClientConfigure(NSString * _Nullable packageToken);
+// onRevoked is also delivered for an initial terminal denial so legacy
+// two-callback hosts never remain pending indefinitely.
 FOUNDATION_EXTERN void APIClientStartAuthorization(dispatch_block_t _Nullable onAuthorized,
                                                     dispatch_block_t _Nullable onRevoked);
 typedef void (^APIClientTerminalEventBlock)(NSDictionary *result);

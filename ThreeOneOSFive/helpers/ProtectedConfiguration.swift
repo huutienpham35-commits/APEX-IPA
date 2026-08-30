@@ -4,6 +4,28 @@ import Foundation
 /// plaintext in the compiled binary. Each byte uses a position-dependent mask,
 /// which also avoids storing a recognizable plain hex/ASCII sequence.
 enum ProtectedConfiguration {
+    /// Decodes a value protected with a random per-byte mask and a second
+    /// position-dependent transform. This avoids embedding the token as a
+    /// plaintext string or as a single trivially XORed byte sequence.
+    private static func decodeMasked(
+        cipher: [UInt8],
+        mask: [UInt8],
+        checksum: UInt64
+    ) -> String {
+        guard cipher.count == mask.count else { return "" }
+        let bytes = zip(cipher, mask).enumerated().map { index, pair -> UInt8 in
+            let position = UInt8(truncatingIfNeeded: (index &* 29) &+ 0x53)
+            return (pair.0 &- position) ^ pair.1
+        }
+        guard let value = String(bytes: bytes, encoding: .utf8) else { return "" }
+        var hash: UInt64 = 0xcbf29ce484222325
+        for byte in value.utf8 {
+            hash ^= UInt64(byte)
+            hash = hash &* 0x100000001b3
+        }
+        return hash == checksum ? value : ""
+    }
+
     private static func decode(_ bytes: [UInt8], seed: UInt8) -> String {
         let decoded = bytes.enumerated().map { index, byte in
             byte ^ (seed &+ UInt8(truncatingIfNeeded: index &* 17))
@@ -26,11 +48,19 @@ enum ProtectedConfiguration {
     }
 
     static var packageToken: String {
-        verified([
-            73, 33, 60, 51, 14, 184, 236, 244, 175, 144, 187, 163, 65, 125,
-            118, 75, 31, 23, 4, 43, 188, 215, 225, 164, 182, 168, 192, 113,
-            79, 103, 93, 24, 26, 19, 34, 249
-        ], seed: 0x39, checksum: 0x4E392DB80CFDA5CF)
+        decodeMasked(
+            cipher: [
+                54, 75, 87, 178, 192, 120, 169, 30, 197, 22, 110, 211, 5, 214,
+                27, 78, 159, 80, 226, 63, 85, 219, 32, 177, 144, 37, 166, 197,
+                0, 206, 122, 58, 123, 127, 171, 133
+            ],
+            mask: [
+                147, 176, 173, 87, 138, 162, 219, 68, 228, 252, 161, 22, 18,
+                97, 99, 59, 42, 93, 234, 146, 143, 110, 1, 167, 226, 183, 82,
+                22, 219, 115, 171, 52, 203, 22, 39, 78
+            ],
+            checksum: 0x4E392DB80CFDA5CF
+        )
     }
 
     static var catalogURL: URL? {

@@ -126,15 +126,36 @@ struct ThreeOneOSFiveApp: App {
 
         log("license: configuring SDK with validated package token (length: \(packageToken.count))")
         APIClientConfigure(packageToken)
-        // Use the SDK compatibility entry point that performs authorization and
-        // the paid-capability check as one operation. Some SDK builds leave the
-        // split StartAuthorization -> PerformAuthorized flow pending forever.
-        log("license: starting legacy combined authorization flow")
-        APIClientStart({
+        log("license: starting SDK 2.0.9 authorization flow")
+        APIClientStartAuthorizationWithEvents({
+            APIClientPerformAuthorized("paid", {
+                DispatchQueue.main.async {
+                    guard licenseAuthorizationAttempt == attempt else { return }
+                    licenseAuthorized = true
+                    startProtectedContentIfNeeded()
+                }
+            }, {
+                DispatchQueue.main.async {
+                    failLicenseAuthorization(
+                        attempt: attempt,
+                        detail: "SDK 2.0.9 từ chối capability: paid"
+                    )
+                }
+            })
+        }, {
             DispatchQueue.main.async {
-                guard licenseAuthorizationAttempt == attempt else { return }
-                licenseAuthorized = true
-                startProtectedContentIfNeeded()
+                failLicenseAuthorization(
+                    attempt: attempt,
+                    detail: "SDK 2.0.9 gọi callback revoked/denied"
+                )
+            }
+        }, { event in
+            log("license: SDK 2.0.9 terminal event \(event)")
+            DispatchQueue.main.async {
+                failLicenseAuthorization(
+                    attempt: attempt,
+                    detail: "SDK 2.0.9 terminal event:\n\(event)"
+                )
             }
         })
 
@@ -144,7 +165,7 @@ struct ThreeOneOSFiveApp: App {
             log("license: authorization timed out after 20 seconds")
             failLicenseAuthorization(
                 attempt: attempt,
-                detail: "Legacy APIClientStart timeout: SDK không trả callback paid sau 20 giây."
+                detail: "SDK 2.0.9 timeout: không có callback sau 20 giây."
             )
         }
     }
