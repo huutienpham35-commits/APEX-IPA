@@ -115,32 +115,29 @@ struct ThreeOneOSFiveApp: App {
         licenseAuthorizationAttempt = attempt
 
         APIClientConfigure(ProtectedConfiguration.packageToken)
-        APIClientStartAuthorizationWithEvents({
-            DispatchQueue.main.async {
-                guard licenseAuthorizationAttempt == attempt else { return }
-                APIClientPerformAuthorized("paid", {
+        // Use the authorization entry point used by the other working clients.
+        // The SDK's WithEvents wrapper can remain pending without forwarding
+        // any callback even though the underlying authorization is available.
+        APIClientStartAuthorization({
+            APIClientPerformAuthorized("paid", {
+                DispatchQueue.main.async {
+                    guard licenseAuthorizationAttempt == attempt else { return }
                     licenseAuthorized = true
                     startProtectedContentIfNeeded()
-                }, {
+                }
+            }, {
+                DispatchQueue.main.async {
                     failLicenseAuthorization(
                         attempt: attempt,
                         detail: "APIClientPerformAuthorized từ chối capability: paid"
                     )
-                })
-            }
+                }
+            })
         }, {
             DispatchQueue.main.async {
                 failLicenseAuthorization(
                     attempt: attempt,
                     detail: "APIClientStartAuthorization gọi callback revoked/denied"
-                )
-            }
-        }, { event in
-            log("license: terminal event \(event)")
-            DispatchQueue.main.async {
-                failLicenseAuthorization(
-                    attempt: attempt,
-                    detail: "SDK terminal event:\n\(event)"
                 )
             }
         })
