@@ -450,14 +450,47 @@ private struct BlockingStatusView: View {
                     .background(.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 10))
                 }
                 if let retryAction {
-                    Button("RETRY", action: retryAction)
-                        .buttonStyle(.borderedProminent)
-                        .tint(AppTheme.accent)
+                    Button(action: retryAction) {
+                        Label("RETRY", systemImage: "arrow.clockwise")
+                            .font(.headline.weight(.bold))
+                            .tracking(1.2)
+                    }
+                    .buttonStyle(RetryButtonStyle())
+                    .hoverEffect(.highlight)
                 }
             }
             .padding(28)
             .frame(maxWidth: 440)
         }
+    }
+}
+
+private struct RetryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundStyle(.white)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 12)
+            .background(
+                Capsule()
+                    .fill(AppTheme.accent)
+                    .brightness(configuration.isPressed ? -0.14 : 0)
+            )
+            .overlay {
+                Capsule()
+                    .stroke(.white.opacity(configuration.isPressed ? 0.42 : 0.16), lineWidth: 1)
+            }
+            .shadow(
+                color: AppTheme.accent.opacity(configuration.isPressed ? 0.18 : 0.42),
+                radius: configuration.isPressed ? 4 : 12,
+                y: configuration.isPressed ? 2 : 7
+            )
+            .scaleEffect(configuration.isPressed ? 0.92 : 1)
+            .opacity(configuration.isPressed ? 0.82 : 1)
+            .animation(
+                .spring(response: 0.24, dampingFraction: 0.62),
+                value: configuration.isPressed
+            )
     }
 }
 
