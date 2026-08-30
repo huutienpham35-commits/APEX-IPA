@@ -131,7 +131,7 @@ enum AppPaths {
 enum AppUpdateChecker {
     static var currentVersion: String {
         // CFBundleShortVersionString is rewritten for every Codemagic build
-        // (1.0.3, 1.0.4...). Never let the legacy display key override it.
+        // (1.0.8, 1.0.9, 1.1.0...). Never let the legacy display key override it.
         Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
             ?? Bundle.main.object(forInfoDictionaryKey: "AppReleaseDisplayVersion") as? String
             ?? "0"
