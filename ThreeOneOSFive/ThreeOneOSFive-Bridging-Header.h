@@ -5,4 +5,8 @@
 #import "kexploit/kutils.h"
 #import "helpers/AppIconHelper.h"
 #import "helpers/DisplayIdentity.h"
+
+// App.swift configures the SDK explicitly with ProtectedConfiguration.
+// Disable the header constructor so APIClientConfigure is not called twice.
+#define APICLIENT_NO_AUTO_SETUP 1
 #import "../API/APIClient.h"

@@ -114,7 +114,18 @@ struct ThreeOneOSFiveApp: App {
         let attempt = UUID()
         licenseAuthorizationAttempt = attempt
 
-        APIClientConfigure(ProtectedConfiguration.packageToken)
+        let packageToken = ProtectedConfiguration.packageToken
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard packageToken.hasPrefix("pkg_"), packageToken.count >= 24 else {
+            failLicenseAuthorization(
+                attempt: attempt,
+                detail: "Package token giải mã không hợp lệ (length: \(packageToken.count))."
+            )
+            return
+        }
+
+        log("license: configuring SDK with validated package token (length: \(packageToken.count))")
+        APIClientConfigure(packageToken)
         // Use the authorization entry point used by the other working clients.
         // The SDK's WithEvents wrapper can remain pending without forwarding
         // any callback even though the underlying authorization is available.
