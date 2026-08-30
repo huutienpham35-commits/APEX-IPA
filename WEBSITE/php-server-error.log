@@ -1,0 +1,185 @@
+[Fri Aug 28 12:23:36 2026] PHP 8.2.12 Development Server (http://127.0.0.1:8000) started
+[Fri Aug 28 12:23:38 2026] 127.0.0.1:57461 Accepted
+[Fri Aug 28 12:23:38 2026] 127.0.0.1:57461 [200]: HEAD /admin/
+[Fri Aug 28 12:23:38 2026] 127.0.0.1:57461 Closing
+[Fri Aug 28 12:23:52 2026] 127.0.0.1:51221 Accepted
+[Fri Aug 28 12:23:52 2026] 127.0.0.1:51221 [200]: GET /admin/
+[Fri Aug 28 12:23:52 2026] 127.0.0.1:51221 Closing
+[Fri Aug 28 12:23:55 2026] 127.0.0.1:58163 Accepted
+[Fri Aug 28 12:23:59 2026] 127.0.0.1:58163 [200]: GET /
+[Fri Aug 28 12:23:59 2026] 127.0.0.1:58163 Closing
+[Fri Aug 28 12:29:42 2026] 127.0.0.1:65335 Accepted
+[Fri Aug 28 12:29:46 2026] 127.0.0.1:65335 [200]: GET /
+[Fri Aug 28 12:29:46 2026] 127.0.0.1:65335 Closing
+[Fri Aug 28 12:36:45 2026] 127.0.0.1:58006 Accepted
+[Fri Aug 28 12:36:49 2026] 127.0.0.1:58006 [200]: GET /
+[Fri Aug 28 12:36:49 2026] 127.0.0.1:58006 Closing
+[Fri Aug 28 12:38:30 2026] 127.0.0.1:49795 Accepted
+[Fri Aug 28 12:38:34 2026] 127.0.0.1:49795 [200]: GET /
+[Fri Aug 28 12:38:34 2026] 127.0.0.1:49795 Closing
+[Fri Aug 28 12:39:34 2026] 127.0.0.1:59403 Accepted
+[Fri Aug 28 12:39:38 2026] 127.0.0.1:59403 [200]: GET /
+[Fri Aug 28 12:39:38 2026] 127.0.0.1:59403 Closing
+[Fri Aug 28 12:41:20 2026] 127.0.0.1:53754 Accepted
+[Fri Aug 28 12:41:24 2026] 127.0.0.1:53754 [200]: GET /
+[Fri Aug 28 12:41:24 2026] 127.0.0.1:53754 Closing
+[Fri Aug 28 13:13:45 2026] 127.0.0.1:53675 Accepted
+[Fri Aug 28 13:13:49 2026] 127.0.0.1:53675 [200]: GET /
+[Fri Aug 28 13:13:49 2026] 127.0.0.1:53675 Closing
+[Fri Aug 28 13:14:02 2026] 127.0.0.1:63560 Accepted
+[Fri Aug 28 13:14:02 2026] 127.0.0.1:63560 [200]: GET /admin/
+[Fri Aug 28 13:14:02 2026] 127.0.0.1:63560 Closing
+[Fri Aug 28 13:14:07 2026] 127.0.0.1:61284 Accepted
+[Fri Aug 28 13:14:07 2026] 127.0.0.1:61284 [200]: POST /api.php?action=verify
+[Fri Aug 28 13:14:07 2026] 127.0.0.1:61284 Closing
+[Fri Aug 28 13:14:07 2026] 127.0.0.1:64109 Accepted
+[Fri Aug 28 13:14:11 2026] 127.0.0.1:64109 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 13:14:11 2026] 127.0.0.1:64109 Closing
+[Fri Aug 28 13:14:11 2026] 127.0.0.1:64572 Accepted
+[Fri Aug 28 13:14:15 2026] 127.0.0.1:64572 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 13:14:15 2026] 127.0.0.1:64572 Closing
+[Fri Aug 28 13:14:44 2026] 127.0.0.1:53582 Accepted
+[Fri Aug 28 13:14:48 2026] 127.0.0.1:53582 [200]: POST /api.php?action=save
+[Fri Aug 28 13:14:48 2026] 127.0.0.1:53582 Closing
+[Fri Aug 28 13:14:49 2026] 127.0.0.1:56225 Accepted
+[Fri Aug 28 13:14:53 2026] 127.0.0.1:56225 [200]: POST /api.php?action=save
+[Fri Aug 28 13:14:53 2026] 127.0.0.1:56225 Closing
+[Fri Aug 28 13:14:53 2026] 127.0.0.1:63164 Accepted
+[Fri Aug 28 13:14:57 2026] 127.0.0.1:63164 [200]: GET /
+[Fri Aug 28 13:14:57 2026] 127.0.0.1:63164 Closing
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:57540 Accepted
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:57540 [200]: GET /admin/
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:57540 Closing
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:50060 Accepted
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:50060 [200]: POST /api.php?action=verify
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:50060 Closing
+[Fri Aug 28 13:15:33 2026] 127.0.0.1:60085 Accepted
+[Fri Aug 28 13:15:37 2026] 127.0.0.1:60085 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 13:15:37 2026] 127.0.0.1:60085 Closing
+[Fri Aug 28 13:15:37 2026] 127.0.0.1:58013 Accepted
+[Fri Aug 28 13:15:41 2026] 127.0.0.1:58013 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 13:15:41 2026] 127.0.0.1:58013 Closing
+[Fri Aug 28 13:15:57 2026] 127.0.0.1:60332 Accepted
+[Fri Aug 28 13:16:01 2026] 127.0.0.1:60332 [200]: POST /api.php?action=save
+[Fri Aug 28 13:16:01 2026] 127.0.0.1:60332 Closing
+[Fri Aug 28 13:16:05 2026] 127.0.0.1:56036 Accepted
+[Fri Aug 28 13:16:09 2026] 127.0.0.1:56036 [200]: POST /api.php?action=save
+[Fri Aug 28 13:16:09 2026] 127.0.0.1:56036 Closing
+[Fri Aug 28 13:16:16 2026] 127.0.0.1:58265 Accepted
+[Fri Aug 28 13:16:20 2026] 127.0.0.1:58265 [200]: GET /
+[Fri Aug 28 13:16:20 2026] 127.0.0.1:58265 Closing
+[Fri Aug 28 13:30:48 2026] 127.0.0.1:64912 Accepted
+[Fri Aug 28 13:30:52 2026] 127.0.0.1:64912 [200]: GET /
+[Fri Aug 28 13:30:52 2026] 127.0.0.1:64912 Closing
+[Fri Aug 28 14:09:49 2026] 127.0.0.1:50252 Accepted
+[Fri Aug 28 14:09:53 2026] 127.0.0.1:50252 [200]: GET /
+[Fri Aug 28 14:09:53 2026] 127.0.0.1:50252 Closing
+[Fri Aug 28 14:22:25 2026] 127.0.0.1:55912 Accepted
+[Fri Aug 28 14:22:29 2026] 127.0.0.1:55912 [200]: GET /
+[Fri Aug 28 14:22:29 2026] 127.0.0.1:55912 Closing
+[Fri Aug 28 16:10:17 2026] 127.0.0.1:63909 Accepted
+[Fri Aug 28 16:10:21 2026] 127.0.0.1:63909 [200]: GET /
+[Fri Aug 28 16:10:21 2026] 127.0.0.1:63909 Closing
+[Fri Aug 28 16:10:21 2026] 127.0.0.1:62831 Accepted
+[Fri Aug 28 16:10:25 2026] 127.0.0.1:62831 [200]: GET /
+[Fri Aug 28 16:10:25 2026] 127.0.0.1:62831 Closing
+[Fri Aug 28 16:10:25 2026] 127.0.0.1:65255 Accepted
+[Fri Aug 28 16:10:29 2026] 127.0.0.1:65255 [200]: GET /
+[Fri Aug 28 16:10:29 2026] 127.0.0.1:65255 Closing
+[Fri Aug 28 16:11:08 2026] 127.0.0.1:59032 Accepted
+[Fri Aug 28 16:11:08 2026] 127.0.0.1:59032 [200]: GET /admin/
+[Fri Aug 28 16:11:08 2026] 127.0.0.1:59032 Closing
+[Fri Aug 28 16:11:09 2026] 127.0.0.1:65128 Accepted
+[Fri Aug 28 16:11:09 2026] 127.0.0.1:65128 [404]: GET /activate.php - No such file or directory
+[Fri Aug 28 16:11:09 2026] 127.0.0.1:65128 Closing
+[Fri Aug 28 16:11:09 2026] 127.0.0.1:59761 Accepted
+[Fri Aug 28 16:11:15 2026] 127.0.0.1:59761 [401]: POST /api.php?action=verify
+[Fri Aug 28 16:11:15 2026] 127.0.0.1:59761 Closing
+[Fri Aug 28 16:11:16 2026] 127.0.0.1:65382 Accepted
+[Fri Aug 28 16:11:16 2026] 127.0.0.1:65382 [401]: POST /api.php?action=verify
+[Fri Aug 28 16:11:16 2026] 127.0.0.1:65382 Closing
+[Fri Aug 28 16:11:17 2026] 127.0.0.1:53979 Accepted
+[Fri Aug 28 16:11:21 2026] 127.0.0.1:53979 [200]: POST /api.php?action=verify
+[Fri Aug 28 16:11:21 2026] 127.0.0.1:53979 Closing
+[Fri Aug 28 16:11:21 2026] 127.0.0.1:63147 Accepted
+[Fri Aug 28 16:11:25 2026] 127.0.0.1:63147 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 16:11:25 2026] 127.0.0.1:63147 Closing
+[Fri Aug 28 16:11:25 2026] 127.0.0.1:62808 Accepted
+[Fri Aug 28 16:11:29 2026] 127.0.0.1:62808 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 16:11:29 2026] 127.0.0.1:62808 Closing
+[Fri Aug 28 16:11:37 2026] 127.0.0.1:50461 Accepted
+[Fri Aug 28 16:11:37 2026] PHP Notice:  PHP Request Startup: file created in the system's temporary directory in Unknown on line 0
+[Fri Aug 28 16:11:37 2026] 127.0.0.1:50461 [200]: POST /api.php?action=upload
+[Fri Aug 28 16:11:37 2026] 127.0.0.1:50461 Closing
+[Fri Aug 28 16:11:37 2026] 127.0.0.1:51510 Accepted
+[Fri Aug 28 16:12:22 2026] 127.0.0.1:51510 [200]: POST /api.php?action=save
+[Fri Aug 28 16:12:22 2026] 127.0.0.1:51510 Closing
+[Fri Aug 28 16:12:52 2026] 127.0.0.1:53043 Accepted
+[Fri Aug 28 16:12:56 2026] 127.0.0.1:53043 [200]: GET /
+[Fri Aug 28 16:12:56 2026] 127.0.0.1:53043 Closing
+[Fri Aug 28 16:12:56 2026] 127.0.0.1:49672 Accepted
+[Fri Aug 28 16:15:02 2026] 127.0.0.1:49672 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Aug 28 16:15:02 2026] 127.0.0.1:49672 Closing
+[Fri Aug 28 16:15:03 2026] 127.0.0.1:58702 Accepted
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:58702 [200]: GET /
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:58702 Closing
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:63880 Accepted
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:63880 [200]: GET /admin/
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:63880 Closing
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:64639 Accepted
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:64639 [200]: POST /api.php?action=verify
+[Fri Aug 28 16:15:07 2026] 127.0.0.1:64639 Closing
+[Fri Aug 28 16:15:08 2026] 127.0.0.1:58405 Accepted
+[Fri Aug 28 16:15:12 2026] 127.0.0.1:58405 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 16:15:12 2026] 127.0.0.1:58405 Closing
+[Fri Aug 28 16:15:12 2026] 127.0.0.1:50923 Accepted
+[Fri Aug 28 16:15:16 2026] 127.0.0.1:50923 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 16:15:16 2026] 127.0.0.1:50923 Closing
+[Fri Aug 28 16:21:24 2026] 127.0.0.1:63994 Accepted
+[Fri Aug 28 16:21:28 2026] 127.0.0.1:63994 [200]: GET /
+[Fri Aug 28 16:21:28 2026] 127.0.0.1:63994 Closing
+[Fri Aug 28 16:21:28 2026] 127.0.0.1:55228 Accepted
+[Fri Aug 28 16:23:18 2026] 127.0.0.1:55228 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Aug 28 16:23:18 2026] 127.0.0.1:55228 Closing
+[Fri Aug 28 16:23:19 2026] 127.0.0.1:63064 Accepted
+[Fri Aug 28 16:23:23 2026] 127.0.0.1:63064 [200]: GET /
+[Fri Aug 28 16:23:23 2026] 127.0.0.1:63064 Closing
+[Fri Aug 28 16:23:23 2026] 127.0.0.1:59013 Accepted
+[Fri Aug 28 16:23:43 2026] 127.0.0.1:59013 [200]: GET /
+[Fri Aug 28 16:23:43 2026] 127.0.0.1:59013 Closing
+[Fri Aug 28 16:24:46 2026] 127.0.0.1:52032 Accepted
+[Fri Aug 28 16:24:50 2026] 127.0.0.1:52032 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 16:24:50 2026] 127.0.0.1:52032 Closing
+[Fri Aug 28 16:24:50 2026] 127.0.0.1:58628 Accepted
+[Fri Aug 28 16:24:54 2026] 127.0.0.1:58628 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 16:24:54 2026] 127.0.0.1:58628 Closing
+[Fri Aug 28 16:32:21 2026] 127.0.0.1:50932 Accepted
+[Fri Aug 28 16:32:25 2026] 127.0.0.1:50932 [200]: GET /
+[Fri Aug 28 16:32:25 2026] 127.0.0.1:50932 Closing
+[Fri Aug 28 16:32:25 2026] 127.0.0.1:56606 Accepted
+[Fri Aug 28 16:33:23 2026] 127.0.0.1:56606 [200]: GET /
+[Fri Aug 28 16:33:23 2026] 127.0.0.1:56606 Closing
+[Fri Aug 28 16:35:45 2026] 127.0.0.1:63242 Accepted
+[Fri Aug 28 16:35:50 2026] 127.0.0.1:63242 [200]: GET /
+[Fri Aug 28 16:35:50 2026] 127.0.0.1:63242 Closing
+[Fri Aug 28 16:35:50 2026] 127.0.0.1:61628 Accepted
+[Fri Aug 28 16:38:27 2026] 127.0.0.1:61628 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Aug 28 16:38:27 2026] 127.0.0.1:61628 Closing
+[Fri Aug 28 16:38:27 2026] 127.0.0.1:57531 Accepted
+[Fri Aug 28 16:38:31 2026] 127.0.0.1:57531 [200]: GET /
+[Fri Aug 28 16:38:31 2026] 127.0.0.1:57531 Closing
+[Fri Aug 28 16:38:31 2026] 127.0.0.1:60854 Accepted
+[Fri Aug 28 16:51:41 2026] 127.0.0.1:60854 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Aug 28 16:51:41 2026] 127.0.0.1:60854 Closing
+[Fri Aug 28 16:51:41 2026] 127.0.0.1:53002 Accepted
+[Fri Aug 28 16:51:41 2026] 127.0.0.1:53002 [200]: GET /admin/
+[Fri Aug 28 16:51:41 2026] 127.0.0.1:53002 Closing
+[Fri Aug 28 16:51:42 2026] 127.0.0.1:57908 Accepted
+[Fri Aug 28 16:51:42 2026] 127.0.0.1:57908 [200]: POST /api.php?action=verify
+[Fri Aug 28 16:51:42 2026] 127.0.0.1:57908 Closing
+[Fri Aug 28 16:51:43 2026] 127.0.0.1:63761 Accepted
+[Fri Aug 28 16:51:47 2026] 127.0.0.1:63761 [200]: POST /api.php?action=admin_read
+[Fri Aug 28 16:51:47 2026] 127.0.0.1:63761 Closing
+[Fri Aug 28 16:51:47 2026] 127.0.0.1:63055 Accepted
+[Fri Aug 28 16:51:51 2026] 127.0.0.1:63055 [200]: POST /api.php?action=admin_stats
+[Fri Aug 28 16:51:51 2026] 127.0.0.1:63055 Closing

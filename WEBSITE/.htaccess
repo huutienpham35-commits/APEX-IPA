@@ -1,0 +1,28 @@
+Options -Indexes
+
+# Upload limits for Apache hosts running PHP as an Apache module.
+# PHP-FPM/FastCGI hosts use .user.ini or php.ini instead.
+<IfModule mod_php.c>
+    php_value upload_max_filesize 512M
+    php_value post_max_size 520M
+    php_value memory_limit 768M
+    php_value max_execution_time 600
+    php_value max_input_time 600
+</IfModule>
+
+<IfModule mod_php8.c>
+    php_value upload_max_filesize 512M
+    php_value post_max_size 520M
+    php_value memory_limit 768M
+    php_value max_execution_time 600
+    php_value max_input_time 600
+</IfModule>
+
+<FilesMatch "^(config\.json|database\.php|database\.config\.php|database\.config\.example\.php|install\.sql|README\.md)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "no-referrer"
+</IfModule>

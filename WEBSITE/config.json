@@ -1,0 +1,528 @@
+{
+    "noticeTitle": "Thông báo",
+    "noticeMessage": "MỌI NHỚ TEST ACC KHÁCH TRƯỚC RỒI MỚI DÙNG ACC CHÍNH NHÉ.\nTIPS : ACC KHÁCH BAN = XÓA GAME TẢI LẠI.\n",
+    "maintenanceEnabled": false,
+    "maintenanceTitle": "MAINTENANCE",
+    "maintenanceMessage": "",
+    "brandTitle": "APEX IPA",
+    "brandSubtitle": "IOS - ANTIBAN - UPDATE",
+    "browserTitle": "",
+    "faviconURL": "https://ipa.apexproxy.store/uploads/1787841726-IMG_0459.jpeg",
+    "brandAvatarURL": "https://sf-static.upanhlaylink.com/img/image_20260826e9cd339efa9b59462a3e1c1a6a7ed09f.jpg",
+    "landingPreviewImageURL": "https://ipa.apexproxy.store/uploads/1787901214-photo_2026-03-28_20-48-36.jpg",
+    "getKeyURL": "https://proxy.huutien.store/get-key/qswv1uj3",
+    "ipaDownloadURL": "https://files.catbox.moe/38g4tz.ipa",
+    "latestVersion": "1.0.5",
+    "minimumVersion": "1.0.5",
+    "forceUpdate": true,
+    "updateURL": "https://files.catbox.moe/38g4tz.ipa",
+    "updateMessage": "",
+    "versionHistory": [
+        {
+            "version": "1.0.5",
+            "url": "https://files.catbox.moe/38g4tz.ipa",
+            "publishedAt": "2026-08-28"
+        }
+    ],
+    "cardOpacity": 0.15,
+    "musicEnabled": true,
+    "musicSource": "video",
+    "musicURL": "https://files.catbox.moe/0kguu5.mp3",
+    "backgroundType": "video",
+    "backgroundImageURL": "https://huutien.store/APEX_IPA/uploads/1787817204-IMG_0076.jpeg",
+    "backgroundVideoURL": "https://huutien.store/APEX_IPA/uploads/1787836296--5842278988201559805.mp4",
+    "backgroundContentMode": "fit",
+    "pageVisibility": {
+        "home": true,
+        "games": true,
+        "patches": false,
+        "wallpaper": false,
+        "files": false,
+        "cleaner": false
+    },
+    "socialLinks": [
+        {
+            "id": "telegram-news",
+            "name": "TELEGRAM",
+            "role": "KÊNH THÔNG BÁO",
+            "url": "https://t.me/apexproxyv1",
+            "icon": "",
+            "appIcon": "paperplane.fill"
+        },
+        {
+            "id": "telegram-chat",
+            "name": "TELEGRAM",
+            "role": "NHÓM CHAT",
+            "url": "https://t.me/apexproxyv1chat",
+            "icon": "",
+            "appIcon": "paperplane.fill"
+        },
+        {
+            "id": "zalo-chat",
+            "name": "ZALO",
+            "role": "NHÓM CHAT",
+            "url": "https://zalo.me/g/gsl985njohn9jkco9sio",
+            "icon": "",
+            "appIcon": "message.fill"
+        }
+    ],
+    "credits": [
+        {
+            "id": "huutien",
+            "name": "HuuTien",
+            "role": "DEVELOPER & DESIGNER",
+            "url": "https://t.me/htios2590",
+            "icon": "",
+            "appIcon": "person.crop.circle.fill"
+        }
+    ],
+    "pricingPlans": [
+        {
+            "name": "THÁNG",
+            "price": "100,000Đ",
+            "description": "",
+            "features": [
+                "Free Fire",
+                "Free Fire MAX",
+                "Liên Quân Mobile",
+                "CAPCUT",
+                "DAZZ CAM",
+                "TelephonyUI"
+            ],
+            "buttonText": "MUA NGAY",
+            "url": "https://t.me/htios2590",
+            "featured": true,
+            "order": 1
+        },
+        {
+            "name": "TUẦN",
+            "price": "60,000Đ",
+            "description": "",
+            "features": [
+                "Free Fire",
+                "Free Fire MAX",
+                "Liên Quân Mobile",
+                "CAPCUT",
+                "DAZZ CAM",
+                "TelephonyUI"
+            ],
+            "buttonText": "MUA NGAY",
+            "url": "https://t.me/htios2590",
+            "featured": false,
+            "order": 2
+        },
+        {
+            "name": "NGÀY",
+            "price": "20,000Đ",
+            "description": "",
+            "features": [
+                "Free Fire",
+                "Free Fire MAX",
+                "Liên Quân Mobile",
+                "CAPCUT",
+                "DAZZ CAM",
+                "TelephonyUI"
+            ],
+            "buttonText": "MUA NGAY",
+            "url": "https://t.me/htios2590",
+            "featured": false,
+            "order": 3
+        },
+        {
+            "name": "1 GIỜ",
+            "price": "5,000Đ",
+            "description": "",
+            "features": [
+                "Free Fire",
+                "Free Fire MAX",
+                "Liên Quân Mobile",
+                "CAPCUT",
+                "DAZZ CAM",
+                "TelephonyUI"
+            ],
+            "buttonText": "MUA NGAY",
+            "url": "https://t.me/htios2590",
+            "featured": false,
+            "order": 4
+        }
+    ],
+    "landingPreviewImages": [
+        {
+            "url": "https://ipa.apexproxy.store/uploads/1787902599-IMG_0711.png",
+            "alt": "Preview",
+            "order": 1
+        },
+        {
+            "url": "https://ipa.apexproxy.store/uploads/1787902765-IMG_0712.png",
+            "alt": "Preview",
+            "order": 2
+        },
+        {
+            "url": "https://ipa.apexproxy.store/uploads/1787902774-IMG_0713.png",
+            "alt": "Preview",
+            "order": 3
+        },
+        {
+            "url": "https://ipa.apexproxy.store/uploads/1787902860-IMG_0714.png",
+            "alt": "Preview",
+            "order": 4
+        },
+        {
+            "url": "https://ipa.apexproxy.store/uploads/1787902870-IMG_0715.png",
+            "alt": "Preview",
+            "order": 5
+        }
+    ],
+    "tabs": [
+        {
+            "id": "aim",
+            "title": "AIM",
+            "icon": "scope",
+            "order": 1
+        },
+        {
+            "id": "location",
+            "title": "Định vị",
+            "icon": "location.north.circle.fill",
+            "order": 2
+        },
+        {
+            "id": "mod",
+            "title": "MOD",
+            "icon": "gearshape.fill",
+            "order": 3
+        }
+    ],
+    "games": [
+        {
+            "id": "free-fire",
+            "name": "Free Fire",
+            "bundleID": "com.dts.freefireth",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_2026082595a6de88da4a5c7f2c13696799706410.jpg",
+            "launchURL": "freefire://",
+            "order": 1,
+            "tabs": [
+                {
+                    "id": "aim",
+                    "title": "AIM",
+                    "icon": "scope",
+                    "order": 1
+                },
+                {
+                    "id": "mod",
+                    "title": "MOD",
+                    "icon": "gearshape.fill",
+                    "order": 3
+                }
+            ],
+            "items": [
+                {
+                    "id": "6c40b228-b877-42ab-bec3-6b48b737b354",
+                    "name": "AIM BODY",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 1,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787846959-AIM_BODY.3105",
+                    "packagePassword": "iosupdate",
+                    "enabled": false
+                },
+                {
+                    "id": "933d8e9d-db0f-4660-9fc4-fca172285ef6",
+                    "name": "AIM DRAG",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 2,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787846973-AIM_DRAG.3105",
+                    "packagePassword": "iosupdate",
+                    "enabled": false
+                },
+                {
+                    "id": "de99cb08-540d-45da-ae32-d15afd1e72d7",
+                    "name": "AIM NECK",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 3,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787847032-Neck.3105",
+                    "packagePassword": "iosupdate",
+                    "enabled": false
+                },
+                {
+                    "id": "cef91175-6355-4fea-b62d-d23f8e703a0c",
+                    "name": "AIM MAGIC",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 4,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787848306-Aim_MaGic.3105",
+                    "packagePassword": "iosupdate",
+                    "enabled": false
+                },
+                {
+                    "id": "aa15b9a3-5bfb-4987-ba7e-6c39e8903c90",
+                    "name": "AIM CHEST",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 5,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787847007-AIM_CHEST.3105",
+                    "packagePassword": "iosupdate",
+                    "enabled": false
+                },
+                {
+                    "id": "2fd0b108-bc8e-418a-b3d8-34171bb03ef6",
+                    "name": "BUFF 144 FPS",
+                    "subtitle": "",
+                    "category": "mod",
+                    "order": 6,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787847632-144_FPS_FFTH.3105",
+                    "packagePassword": "",
+                    "enabled": false
+                }
+            ]
+        },
+        {
+            "id": "free-fire-max",
+            "name": "Free Fire Max",
+            "bundleID": "com.dts.freefiremax",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_20260825f86846842de92974712e400f230c45d9.jpg",
+            "launchURL": "freefiremax://",
+            "tabs": [
+                {
+                    "id": "aim",
+                    "title": "AIM",
+                    "icon": "scope",
+                    "order": 1
+                },
+                {
+                    "id": "mod",
+                    "title": "MOD",
+                    "icon": "gearshape.fill",
+                    "order": 3
+                }
+            ],
+            "items": [
+                {
+                    "id": "8908c694-25f5-41b8-b286-dab0f71065fb",
+                    "name": "AIM BODY + CHAMS RED",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 1,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840619-Aim_Body_-FFMax-.3105",
+                    "packagePassword": "",
+                    "enabled": false,
+                    "imageURL": ""
+                },
+                {
+                    "id": "1badc83d-1d25-4978-a8b5-b9e665c87fcf",
+                    "name": "BUFF 144 FPS",
+                    "subtitle": "",
+                    "category": "mod",
+                    "order": 2,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840665-144_FPS_FFMAX.3105",
+                    "packagePassword": "huutien144fps",
+                    "enabled": false,
+                    "imageURL": ""
+                },
+                {
+                    "id": "5c812b98-421d-48d3-a2d4-4e9b9971d441",
+                    "name": "AIM BODY",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 3,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787849462-Body_FFMAX.3105",
+                    "packagePassword": "",
+                    "enabled": false
+                },
+                {
+                    "id": "ebe2e3e1-580d-4aa8-b25b-af2c25d35f8d",
+                    "name": "AIM DRAG",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 4,
+                    "imageURL": "",
+                    "fileURL": "",
+                    "packagePassword": "",
+                    "enabled": false
+                },
+                {
+                    "id": "68faacbf-94c8-45a1-8b24-62db5b54f741",
+                    "name": "AIM NECK",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 5,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787849564-Neck_FFMAX.3105",
+                    "packagePassword": "",
+                    "enabled": false
+                },
+                {
+                    "id": "19fd10ed-1f17-44b3-9000-0448d61fc675",
+                    "name": "AIM CHEST",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 6,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787849573-Chest_FFMAX.3105",
+                    "packagePassword": "",
+                    "enabled": false
+                },
+                {
+                    "id": "8eea093d-a161-4ac8-bba0-9c022052358e",
+                    "name": "AIM MAGIC",
+                    "subtitle": "",
+                    "category": "aim",
+                    "order": 7,
+                    "imageURL": "",
+                    "fileURL": "",
+                    "packagePassword": "",
+                    "enabled": false
+                }
+            ],
+            "order": 2
+        },
+        {
+            "id": "8d03a530-584f-4527-9077-155badd493ca",
+            "name": "CAPCUT",
+            "bundleID": "com.lemon.lvoverseas",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_20260825fa0910bd27b1bf2b754fe9bd4ad36f30.jpg",
+            "launchURL": "",
+            "order": 5,
+            "items": [
+                {
+                    "id": "c9e35839-cfd0-46b9-b5ca-106d85c152d4",
+                    "name": "UNLOCK PRO",
+                    "subtitle": "",
+                    "category": "tab-mt9thsz0",
+                    "order": 1,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840730-Capcut_Pro.3105",
+                    "packagePassword": "3105",
+                    "enabled": false,
+                    "imageURL": ""
+                }
+            ],
+            "tabs": [
+                {
+                    "id": "tab-mt9thsz0",
+                    "title": "MOD",
+                    "icon": "square.grid.2x2.fill",
+                    "order": 1
+                }
+            ]
+        },
+        {
+            "id": "10a2ac92-7d88-4a92-9149-ba62701e50f5",
+            "name": "DAZZ CAM",
+            "bundleID": "dazz.camera.vintagecamera",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_202608259224821c5159e7c25182cfabae51adc2.jpg",
+            "launchURL": "",
+            "order": 6,
+            "items": [
+                {
+                    "id": "d1ef0d30-3bd6-4290-b8dd-ede9d9ed9140",
+                    "name": "UNLOCK PRO",
+                    "subtitle": "",
+                    "category": "tab-mt9thz11",
+                    "order": 1,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840739-Dazz_Cam_Pro__WmCry_.3105",
+                    "packagePassword": "wmcry",
+                    "enabled": false,
+                    "imageURL": ""
+                }
+            ],
+            "tabs": [
+                {
+                    "id": "tab-mt9thz11",
+                    "title": "MOD",
+                    "icon": "square.grid.2x2.fill",
+                    "order": 1
+                }
+            ]
+        },
+        {
+            "id": "174b88fd-aafe-4dd4-b611-d4084967f531",
+            "name": "Liên Quân Mobile",
+            "bundleID": "com.garena.game.kgvn",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_20260826f566821671a1abe9be3dee765e7feb29.jpg",
+            "launchURL": "freefire://",
+            "order": 3,
+            "items": [
+                {
+                    "id": "7f90de30-cf3a-4730-aa9e-db36afe7f4d3",
+                    "name": "HACK MAP - CAM XA",
+                    "subtitle": "",
+                    "category": "tab-mt9ydxlr",
+                    "order": 1,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840716-HACK_MAP_AOV_HuuTien.3105",
+                    "packagePassword": "huutienaov",
+                    "enabled": false,
+                    "imageURL": ""
+                },
+                {
+                    "id": "673e966a-ab1f-4127-b304-3a6a42958de9",
+                    "name": "UNLOCK SKIN + CAM XA",
+                    "subtitle": "",
+                    "category": "tab-mt9ydxlr",
+                    "order": 3,
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787840705-UNLOCKSKIN-CAMXA.3105",
+                    "packagePassword": "1234bannei",
+                    "enabled": false,
+                    "imageURL": ""
+                }
+            ],
+            "tabs": [
+                {
+                    "id": "tab-mt9ydxlr",
+                    "title": "HACK",
+                    "icon": "square.grid.2x2.fill",
+                    "order": 1
+                }
+            ]
+        },
+        {
+            "id": "c9c90327-7017-495a-ac59-c59431c82252",
+            "name": "TelephonyUI",
+            "bundleID": "com.apple.mobilephone",
+            "iconURL": "https://sf-static.upanhlaylink.com/img/image_2026082795a404ecabf8a6759a23ada7e9a1cf71.jpg",
+            "launchURL": "",
+            "order": 8,
+            "items": [
+                {
+                    "id": "c50a5efc-7315-4e42-a394-fdd0a366242f",
+                    "name": "CUTE CAT",
+                    "subtitle": "",
+                    "category": "tab-mtbmxydk",
+                    "order": 1,
+                    "imageURL": "https://ipa.apexproxy.store/uploads/1787887951-photo_2026-03-28_20-48-36.jpg",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787842041-TelephonyUI-cute-cat.3105",
+                    "packagePassword": "",
+                    "enabled": false
+                },
+                {
+                    "id": "4efbe420-051e-415c-a729-09ae5f116188",
+                    "name": "AMONGUS",
+                    "subtitle": "",
+                    "category": "tab-mtbmxydk",
+                    "order": 2,
+                    "imageURL": "",
+                    "fileURL": "https://ipa.apexproxy.store/uploads/1787847870-Telephone_Among_Us_Cre_-Gasetinh.3105",
+                    "packagePassword": "huycoi4136j",
+                    "enabled": false
+                }
+            ],
+            "tabs": [
+                {
+                    "id": "tab-mtbmxydk",
+                    "title": "CHANGE",
+                    "icon": "square.grid.2x2.fill",
+                    "order": 1
+                }
+            ]
+        }
+    ],
+    "musicUseBackgroundVideo": true
+}
