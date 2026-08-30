@@ -7,9 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define TSERVER_SDK_RELEASE_VERSION @"2.0.8"
 #define APICLIENT_HAS_TERMINAL_EVENTS 1
 
-// Điền package token đúng MỘT LẦN tại đây. UI pack được chọn trên web và
-// chỉ hiển thị sau khi signed server config trả về; customer source không cần cấu hình thêm.
-static NSString * const kAPIClientPackageToken = @"pkg_s6sDnBXWDkQsVMoW1INdgJ3uZAjPCyYu";
+// Token của app được giải mã lúc chạy từ ProtectedConfiguration.swift.
+// Giữ hằng public này rỗng để token pkg_ không xuất hiện dạng plaintext trong binary.
+static NSString * const kAPIClientPackageToken = @"";
 
 FOUNDATION_EXTERN void APIClientConfigure(NSString * _Nullable packageToken);
 FOUNDATION_EXTERN void APIClientStartAuthorization(dispatch_block_t _Nullable onAuthorized,
