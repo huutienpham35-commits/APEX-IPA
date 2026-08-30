@@ -14,13 +14,8 @@ struct ThreeOneOSFiveApp: App {
     @State private var isInitialLoading = true
     @State private var initialLoadingProgress = 0.0
     @State private var initialLoadingMessage = "Đang kết nối máy chủ"
-    @State private var connectionFailed = false
-    @State private var connectionFailureTitle = "LỖI KẾT NỐI"
-    @State private var connectionFailureMessage = "Không thể kết nối máy chủ dữ liệu."
-    @State private var connectionFailureDetail = ""
     @State private var licenseAuthorized = false
     @State private var licenseAuthorizationStarted = false
-    @State private var licenseAuthorizationAttempt = UUID()
     @State private var protectedContentStarted = false
     /// After user taps OK, don't force the notice again until next background→active.
     @State private var noticeDismissedUntilNextEnter = false
@@ -77,7 +72,6 @@ struct ThreeOneOSFiveApp: App {
     private func refreshRemoteContent(presentNotice: Bool) {
         Task {
             let connected = await GameCatalogStore.shared.refresh(prefetch: true)
-            await MainActor.run { connectionFailed = !connected }
             guard connected else { return }
             guard presentNotice else { return }
             await MainActor.run {
@@ -105,69 +99,31 @@ struct ThreeOneOSFiveApp: App {
     private func startLicenseAuthorization() {
         guard !licenseAuthorizationStarted else { return }
         licenseAuthorizationStarted = true
-        connectionFailed = false
-        connectionFailureDetail = ""
-        isInitialLoading = true
-        initialLoadingProgress = 0
-        initialLoadingMessage = "Đang kết nối máy chủ"
-
-        let attempt = UUID()
-        licenseAuthorizationAttempt = attempt
+        // Leave the screen to libAPIClient while it handles key entry/status.
+        isInitialLoading = false
 
         let packageToken = ProtectedConfiguration.packageToken
             .trimmingCharacters(in: .whitespacesAndNewlines)
         guard packageToken.hasPrefix("pkg_"), packageToken.count >= 24 else {
-            failLicenseAuthorization(
-                attempt: attempt,
-                detail: "Package token giải mã không hợp lệ (length: \(packageToken.count))."
-            )
+            revokeLicenseAccess()
             return
         }
 
-        log("license: configuring SDK with validated package token (length: \(packageToken.count))")
         APIClientConfigure(packageToken)
-        log("license: starting SDK 2.1.0 authorization flow")
         APIClientStartAuthorizationWithEvents({
             APIClientPerformAuthorized("paid", {
                 DispatchQueue.main.async {
-                    guard licenseAuthorizationAttempt == attempt else { return }
                     licenseAuthorized = true
                     startProtectedContentIfNeeded()
                 }
             }, {
-                DispatchQueue.main.async {
-                    failLicenseAuthorization(
-                        attempt: attempt,
-                        detail: "SDK 2.1.0 từ chối capability: paid"
-                    )
-                }
+                revokeLicenseAccess()
             })
         }, {
-            DispatchQueue.main.async {
-                failLicenseAuthorization(
-                    attempt: attempt,
-                    detail: "SDK 2.1.0 gọi callback revoked/denied"
-                )
-            }
-        }, { event in
-            log("license: SDK 2.1.0 terminal event \(event)")
-            DispatchQueue.main.async {
-                failLicenseAuthorization(
-                    attempt: attempt,
-                    detail: "SDK 2.1.0 terminal event:\n\(event)"
-                )
-            }
+            revokeLicenseAccess()
+        }, { _ in
+            revokeLicenseAccess()
         })
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
-            guard licenseAuthorizationAttempt == attempt,
-                  !licenseAuthorized else { return }
-            log("license: authorization timed out after 20 seconds")
-            failLicenseAuthorization(
-                attempt: attempt,
-                detail: "SDK 2.1.0 timeout: không có callback sau 20 giây."
-            )
-        }
     }
 
     private func startProtectedContentIfNeeded() {
@@ -185,42 +141,16 @@ struct ThreeOneOSFiveApp: App {
         }
     }
 
-    private func failLicenseAuthorization(attempt: UUID, detail: String) {
-        guard licenseAuthorizationAttempt == attempt,
-              !licenseAuthorized else { return }
-        licenseAuthorizationStarted = false
-        connectionFailureTitle = "LỖI XÁC THỰC"
-        connectionFailureMessage = "Máy chủ cấp quyền không phản hồi hoặc đã từ chối yêu cầu."
-        connectionFailureDetail = detail
-        connectionFailed = true
-        isInitialLoading = false
-    }
-
-    private func retryConnection() {
-        connectionFailed = false
-        connectionFailureDetail = ""
-        if licenseAuthorized {
-            initialLoadingProgress = 0
-            isInitialLoading = true
-            loadInitialContent()
-        } else {
-            startLicenseAuthorization()
-        }
-    }
-
     private func loadInitialContent() {
         Task {
             await MainActor.run {
                 AmbientMediaController.shared.setPlaybackAllowed(false)
+                isInitialLoading = true
                 initialLoadingProgress = 0.04
                 initialLoadingMessage = "Đang tải cấu hình"
             }
             let connected = await GameCatalogStore.shared.refresh(prefetch: false)
-            connectionFailed = !connected
             guard connected else {
-                connectionFailureTitle = "LỖI TẢI CẤU HÌNH"
-                connectionFailureMessage = "Không thể tải dữ liệu từ máy chủ catalog."
-                connectionFailureDetail = GameCatalogStore.shared.lastError ?? "Không có chi tiết lỗi."
                 isInitialLoading = false
                 return
             }
@@ -242,10 +172,6 @@ struct ThreeOneOSFiveApp: App {
                 initialLoadingMessage = message
             }
             guard mediaReady else {
-                connectionFailureTitle = "LỖI TẢI MEDIA"
-                connectionFailureMessage = "Không thể chuẩn bị hình nền, video hoặc âm thanh từ máy chủ."
-                connectionFailureDetail = "AmbientMediaController.prepareForPlayback trả về false."
-                connectionFailed = true
                 isInitialLoading = false
                 return
             }
@@ -308,7 +234,7 @@ struct ThreeOneOSFiveApp: App {
                     .preferredColorScheme(preferredScheme)
                     .tint(accentColor)
                     .opacity(showOnboarding || !licenseAuthorized ? 0 : 1)
-                    .allowsHitTesting(licenseAuthorized && !showOnboarding && !showNotice && !connectionFailed && !gameCatalog.catalog.resolvedMaintenanceEnabled)
+                    .allowsHitTesting(licenseAuthorized && !showOnboarding && !showNotice && !gameCatalog.catalog.resolvedMaintenanceEnabled)
 
                 if showOnboarding {
                     OnboardingView {
@@ -354,21 +280,11 @@ struct ThreeOneOSFiveApp: App {
                         .zIndex(10)
                 }
 
-                if !isInitialLoading && connectionFailed {
-                    BlockingStatusView(
-                        title: connectionFailureTitle,
-                        message: connectionFailureMessage,
-                        detail: connectionFailureDetail,
-                        symbol: "wifi.slash",
-                        retryAction: retryConnection
-                    )
-                    .zIndex(11)
-                } else if !isInitialLoading && gameCatalog.catalog.resolvedMaintenanceEnabled {
+                if !isInitialLoading && gameCatalog.catalog.resolvedMaintenanceEnabled {
                     BlockingStatusView(
                         title: gameCatalog.catalog.resolvedMaintenanceTitle,
                         message: gameCatalog.catalog.resolvedMaintenanceMessage,
-                        symbol: "wrench.and.screwdriver.fill",
-                        retryAction: nil
+                        symbol: "wrench.and.screwdriver.fill"
                     )
                     .zIndex(11)
                 }
@@ -438,9 +354,7 @@ private struct InitialLoadingView: View {
 private struct BlockingStatusView: View {
     let title: String
     let message: String
-    var detail: String = ""
     let symbol: String
-    let retryAction: (() -> Void)?
 
     var body: some View {
         ZStack {
@@ -451,60 +365,10 @@ private struct BlockingStatusView: View {
                     .foregroundStyle(AppTheme.accent)
                 Text(title).font(.title2.weight(.black)).multilineTextAlignment(.center)
                 Text(message).foregroundStyle(.secondary).multilineTextAlignment(.center)
-                if !detail.isEmpty {
-                    ScrollView {
-                        Text(detail)
-                            .font(.caption.monospaced())
-                            .foregroundStyle(.secondary)
-                            .textSelection(.enabled)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .frame(maxHeight: 150)
-                    .padding(12)
-                    .background(.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 10))
-                }
-                if let retryAction {
-                    Button(action: retryAction) {
-                        Label("RETRY", systemImage: "arrow.clockwise")
-                            .font(.headline.weight(.bold))
-                            .tracking(1.2)
-                    }
-                    .buttonStyle(RetryButtonStyle())
-                    .hoverEffect(.highlight)
-                }
             }
             .padding(28)
             .frame(maxWidth: 440)
         }
-    }
-}
-
-private struct RetryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundStyle(.white)
-            .padding(.horizontal, 24)
-            .padding(.vertical, 12)
-            .background(
-                Capsule()
-                    .fill(AppTheme.accent)
-                    .brightness(configuration.isPressed ? -0.14 : 0)
-            )
-            .overlay {
-                Capsule()
-                    .stroke(.white.opacity(configuration.isPressed ? 0.42 : 0.16), lineWidth: 1)
-            }
-            .shadow(
-                color: AppTheme.accent.opacity(configuration.isPressed ? 0.18 : 0.42),
-                radius: configuration.isPressed ? 4 : 12,
-                y: configuration.isPressed ? 2 : 7
-            )
-            .scaleEffect(configuration.isPressed ? 0.92 : 1)
-            .opacity(configuration.isPressed ? 0.82 : 1)
-            .animation(
-                .spring(response: 0.24, dampingFraction: 0.62),
-                value: configuration.isPressed
-            )
     }
 }
 
