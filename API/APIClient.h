@@ -4,10 +4,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // Public customer header — keep tiny. Secrets/endpoints live sealed inside libAPIClient.a.
-#define TSERVER_SDK_RELEASE_VERSION @"2.0.9"
+#define TSERVER_SDK_RELEASE_VERSION @"2.1.0"
 #define APICLIENT_HAS_TERMINAL_EVENTS 1
 
-// Configured at runtime by ProtectedConfiguration.swift. Keep plaintext empty.
+// Configured at runtime from the protected Swift configuration.
+// Never place a plaintext package token in this public header.
 static NSString * const kAPIClientPackageToken = @"";
 
 FOUNDATION_EXTERN void APIClientConfigure(NSString * _Nullable packageToken);

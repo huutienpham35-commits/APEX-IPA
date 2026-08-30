@@ -126,7 +126,7 @@ struct ThreeOneOSFiveApp: App {
 
         log("license: configuring SDK with validated package token (length: \(packageToken.count))")
         APIClientConfigure(packageToken)
-        log("license: starting SDK 2.0.9 authorization flow")
+        log("license: starting SDK 2.1.0 authorization flow")
         APIClientStartAuthorizationWithEvents({
             APIClientPerformAuthorized("paid", {
                 DispatchQueue.main.async {
@@ -138,7 +138,7 @@ struct ThreeOneOSFiveApp: App {
                 DispatchQueue.main.async {
                     failLicenseAuthorization(
                         attempt: attempt,
-                        detail: "SDK 2.0.9 từ chối capability: paid"
+                        detail: "SDK 2.1.0 từ chối capability: paid"
                     )
                 }
             })
@@ -146,15 +146,15 @@ struct ThreeOneOSFiveApp: App {
             DispatchQueue.main.async {
                 failLicenseAuthorization(
                     attempt: attempt,
-                    detail: "SDK 2.0.9 gọi callback revoked/denied"
+                    detail: "SDK 2.1.0 gọi callback revoked/denied"
                 )
             }
         }, { event in
-            log("license: SDK 2.0.9 terminal event \(event)")
+            log("license: SDK 2.1.0 terminal event \(event)")
             DispatchQueue.main.async {
                 failLicenseAuthorization(
                     attempt: attempt,
-                    detail: "SDK 2.0.9 terminal event:\n\(event)"
+                    detail: "SDK 2.1.0 terminal event:\n\(event)"
                 )
             }
         })
@@ -165,7 +165,7 @@ struct ThreeOneOSFiveApp: App {
             log("license: authorization timed out after 20 seconds")
             failLicenseAuthorization(
                 attempt: attempt,
-                detail: "SDK 2.0.9 timeout: không có callback sau 20 giây."
+                detail: "SDK 2.1.0 timeout: không có callback sau 20 giây."
             )
         }
     }
