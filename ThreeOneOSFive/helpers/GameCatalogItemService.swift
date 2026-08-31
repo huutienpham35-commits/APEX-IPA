@@ -96,8 +96,11 @@ enum GameCatalogItemService {
 
     static func ensureLocalPackage(itemID: String, remoteURL: URL) async throws -> URL {
         let localURL = try localPackageURL(itemID: itemID)
+        let sourceURL = localURL.appendingPathExtension("source")
+        let currentSource = try? String(contentsOf: sourceURL, encoding: .utf8)
         if FileManager.default.fileExists(atPath: localURL.path),
-           (try? localURL.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0 > 64 {
+           (try? localURL.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0 > 64,
+           currentSource == remoteURL.absoluteString {
             return localURL
         }
         let (temporaryURL, response) = try await URLSession.shared.download(from: remoteURL)
@@ -113,6 +116,11 @@ enum GameCatalogItemService {
             try FileManager.default.removeItem(at: localURL)
         }
         try FileManager.default.copyItem(at: temporaryURL, to: localURL)
+        // An item keeps the same ID when its package is replaced in the admin.
+        // Remember which URL produced this cache entry so that the next catalog
+        // refresh cannot execute the previous package under the item's new name
+        // or category.
+        try remoteURL.absoluteString.write(to: sourceURL, atomically: true, encoding: .utf8)
         return localURL
     }
 
